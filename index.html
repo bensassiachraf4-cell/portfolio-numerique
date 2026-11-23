@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101a35"><title>StudyHub — ISET Nabeul</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<aside class="sidebar">
+ <a class="brand" href="#"><span class="brand-icon">S</span><span>StudyHub<small>ISET Nabeul</small></span></a>
+ <div class="nav-label">ESPACE ÉTUDIANT</div>
+ <button class="nav active" data-page="home">⌂ <span>Accueil</span></button>
+ <button class="nav" data-page="courses">▤ <span>Cours & résumés</span></button>
+ <button class="nav" data-page="podcasts">◖ <span>Podcasts</span></button>
+ <button class="nav" data-page="videos">▷ <span>Vidéos</span></button>
+ <button class="nav" data-page="tps">⌘ <span>TP & exercices</span></button>
+ <div class="nav-label spaced">OUTILS</div>
+ <button class="nav" data-page="classroom">▣ <span>Google Classroom</span></button>
+ <button class="nav" data-page="admin">＋ <span>Importer un cours</span></button>
+ <div class="sidebar-bottom"><div class="avatar">IT</div><div><b>Informatique Technologique</b><small>1ère année · ISET Nabeul</small></div></div>
+</aside>
+<main class="main">
+ <header class="topbar"><button class="mobile-menu" id="menuBtn">☰</button><div class="crumb">Espace étudiant <span>/</span> <b id="pageTitle">Accueil</b></div><div class="top-actions"><span class="online-dot"></span> Ressources pédagogiques <button class="round">?</button></div></header>
+ <section id="home" class="page active">
+  <div class="hero"><div><span class="eyebrow">PLATEFORME D'APPRENTISSAGE · 2026/2027</span><h1>Apprends mieux.<br><em>Progresse chaque jour.</em></h1><p>Tous tes cours, résumés, podcasts et TP de l'ISET Nabeul réunis au même endroit.</p><button class="primary" data-go="courses">Explorer les cours <b>→</b></button></div><div class="hero-art"><div class="orb orb1"></div><div class="orb orb2"></div><div class="book">✦<small>STUDY<br>HUB</small></div><div class="float-card">✎ <span>Réviser intelligemment</span></div></div></div>
+  <div class="section-head"><div><span class="eyebrow">TON ESPACE</span><h2>Bibliothèque de cours</h2></div><button class="text-btn" data-go="courses">Voir tout →</button></div>
+  <div class="stats"><div class="stat"><span class="stat-icon purple">▤</span><div><b id="courseCount">7</b><small>Matières</small></div></div><div class="stat"><span class="stat-icon blue">♫</span><div><b>Audio</b><small>Révisions podcast</small></div></div><div class="stat"><span class="stat-icon orange">▷</span><div><b>Vidéo</b><small>Leçons visuelles</small></div></div><div class="stat"><span class="stat-icon green">⌘</span><div><b>TP</b><small>Pratique & exercices</small></div></div></div>
+  <div class="section-head"><div><span class="eyebrow">PROGRAMME ISET NABEUL</span><h2>Les matières</h2></div></div><div class="course-grid" id="homeGrid"></div>
+  <div class="notice"><span>✦</span><div><b>Un espace pour réussir</b><p>Ajoute tes supports PDF depuis l'espace Importer un cours. Les documents restent dans ce navigateur jusqu'à leur publication ou sauvegarde.</p></div></div>
+ </section>
+ <section id="courses" class="page"><div class="page-intro"><span class="eyebrow">APPRENDRE & COMPRENDRE</span><h1>Cours & résumés</h1><p>Retrouve les supports par matière et ajoute tes propres documents.</p></div><div class="toolbar"><input id="search" placeholder="⌕  Rechercher une matière ou un cours…"><select id="subjectFilter"><option value="">Toutes les matières</option></select></div><div id="allCourses" class="course-grid"></div></section>
+ <section id="podcasts" class="page"><div class="page-intro"><span class="eyebrow">ÉCOUTER POUR MÉMORISER</span><h1>Podcasts de révision</h1><p>Écoute les résumés de cours pendant tes déplacements ou tes pauses.</p></div><div class="feature-panel"><div class="feature-icon">♫</div><div><h3>Lecteur de podcast</h3><p>Sélectionne un résumé puis lance la lecture vocale. La voix dépend des voix françaises disponibles sur ton appareil.</p></div></div><div id="podcastList" class="resource-list"></div><div class="player"><div><small>LECTURE AUDIO</small><b id="audioTitle">Choisis un résumé à écouter</b></div><button class="primary" id="speakBtn">▶ Écouter</button><button class="secondary" id="stopBtn">■ Arrêter</button></div></section>
+ <section id="videos" class="page"><div class="page-intro"><span class="eyebrow">VOIR & APPRENDRE</span><h1>Vidéos pédagogiques</h1><p>Vidéos de cours et ressources vidéo classées par matière.</p></div><div class="video-grid" id="videoGrid"></div><div class="notice"><span>ⓘ</span><div><b>Créer une vidéo de cours avec IA</b><p>Importe d'abord le PDF et prépare le résumé. La génération d'une vraie vidéo narrée nécessite un service vidéo IA connecté et une configuration de serveur.</p></div></div></section>
+ <section id="tps" class="page"><div class="page-intro"><span class="eyebrow">S'ENTRAÎNER</span><h1>TP & exercices</h1><p>Travaux pratiques, fiches et exercices de première année.</p></div><div id="tpGrid" class="course-grid"></div></section>
+ <section id="classroom" class="page"><div class="page-intro"><span class="eyebrow">SYNCHRONISATION DES COURS</span><h1>Google Classroom</h1><p>Accède directement aux classes partagées. Les liens ci-dessous sont ceux fournis pour StudyHub.</p></div><div class="feature-panel"><div class="feature-icon classroom-icon">G</div><div><h3>Ouvrir Google Classroom</h3><p>Connecte-toi avec le compte Google inscrit dans tes classes pour consulter les cours, devoirs et pièces jointes.</p></div><a class="primary" href="https://classroom.google.com/" target="_blank" rel="noopener">Ouvrir ↗</a></div><div class="class-grid" id="classGrid"></div><div class="notice"><span>🔒</span><div><b>À propos de l'importation automatique</b><p>Les liens ouvrent tes classes, mais ne donnent pas à GitHub Pages l'autorisation de lire ou télécharger leurs fichiers. La synchronisation automatique nécessite une application Google Cloud avec OAuth 2.0, l'API Classroom activée et un serveur sécurisé.</p></div></div></section>
+ <section id="admin" class="page"><div class="page-intro"><span class="eyebrow">GESTION DES RESSOURCES</span><h1>Importer un cours ou un TP</h1><p>Ajoute un document PDF à ta bibliothèque locale.</p></div><form id="uploadForm" class="upload-panel"><label>Nom du cours<input id="courseName" required placeholder="Ex. Introduction aux systèmes informatiques"></label><label>Matière<select id="courseSubject"></select></label><label>Type de ressource<select id="courseType"><option>Cours</option><option>TP</option><option>Exercice</option></select></label><label>Fichier PDF<input id="pdfFile" type="file" accept="application/pdf" required></label><button class="primary" type="submit">＋ Ajouter à la bibliothèque</button><p class="muted" id="uploadStatus">Le fichier est conservé dans le stockage de ce navigateur. Pour le partager sur GitHub, ajoute-le au dépôt du site.</p></form><div class="section-head"><div><span class="eyebrow">RESSOURCES AJOUTÉES</span><h2>Mes documents</h2></div></div><div id="uploadedList" class="resource-list"></div></section>
+ <footer>StudyHub ISET Nabeul <span>·</span> Plateforme pédagogique non officielle</footer>
+</main>
+<script src="app.js"></script>
+</body></html>
